@@ -39,6 +39,5 @@ class PostController extends Controller
          $request['author'] = Auth::user()->id;
          $post = Post::create($request->all());
          return new PostDetailResource($post->loadMissing('writer:id,username'));
-        // return response()->json('kontol');
     }
 }
